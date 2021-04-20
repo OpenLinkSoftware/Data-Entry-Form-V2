@@ -191,7 +191,7 @@ class State {
 		DOC.qSel("#dbmsID #docNameID").value = solid_storage_value;
 		DOC.qSel("#fsID #docNameID").value = solid_storage_value;
 	} else {
-		DOC.iSel("#dbmsID #docNameID").value = "urn:records:test";
+		DOC.qSel("#dbmsID #docNameID").value = "urn:records:test";
 	}
 
 	// value from permalink
