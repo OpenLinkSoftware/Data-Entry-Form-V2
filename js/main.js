@@ -897,7 +897,7 @@ async function bnQueryGen() {
 			+ "WHERE {" + " " + subject + " " + predicate + " " + object + " " + "}"
 	}
 
-	await executeQuery(query, true);
+	await executeQuery(query, graph, true);
 }
 
 
@@ -936,7 +936,7 @@ async function queryGen() {
 			+ "WHERE {" + " " + subject + " " + predicate + " " + object + " " + "}"
 	}
 
-	await executeQuery(query, true);
+	await executeQuery(query, graph, true);
 }
 
 
@@ -965,11 +965,11 @@ async function updateTable() {
 			+ "SELECT DISTINCT * FROM <" + graph + "> WHERE {?subject ?predicate ?object}"
 	}
 
-	await executeQuery(data_query);
+	await executeQuery(data_query, graph);
 }
 
 
-async function executeQuery(data_query, is_query) {
+async function executeQuery(data_query, graph, is_query) {
 
 	setLimit();
 	dataTable.clear().draw();
